@@ -18,19 +18,19 @@ jobs:
       - name: lint measured
         uses: luke142367/Docker-Lint-Action@v1.1.1
         with:
-          target: 0-measured/deployments/Dockerfile
+          target: 1-measured/deployments/Dockerfile
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: lint optimized
         uses: luke142367/Docker-Lint-Action@v1.1.1
         with:
-          target: 0-optimized/deployments/Dockerfile
+          target: 2-optimized/deployments/Dockerfile
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: lint recommended
         uses: luke142367/Docker-Lint-Action@v1.1.1
         with:
-          target: 0-recommended/deployments/Dockerfile
+          target: 3-recommended/deployments/Dockerfile
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   build-base-image:
