@@ -1,0 +1,27 @@
+name: release new image
+
+on:
+  workflow_run:
+    workflows:
+      - build and push docker image
+    branches:
+      - master
+    types:
+      - completed
+
+jobs:
+  release-new-image:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: commit tag on prod
+        run: 'sed -i "s/tag: .*/tag: ${{ github.sha }}/g" tilt/values.yaml'
+      - uses: EndBug/add-and-commit@v5.2.0
+        with:
+          author_name: Service Account
+          author_email: service@account.io
+          message: '[ci skip] Bump image to ${{ github.sha }}'
+          push: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
