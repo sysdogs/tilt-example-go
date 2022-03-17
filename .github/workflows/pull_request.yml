@@ -49,8 +49,6 @@ jobs:
           context: "0-base"
           file: "0-base/deployments/Dockerfile"
           push: false
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
   build-measured-image:
     runs-on: ubuntu-latest
     steps:
@@ -67,8 +65,6 @@ jobs:
           context: "1-measured"
           file: "1-measured/deployments/Dockerfile"
           push: false
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
   build-optimized-image:
     runs-on: ubuntu-latest
     steps:
@@ -85,8 +81,6 @@ jobs:
           context: "2-optimized"
           file: "2-optimized/deployments/Dockerfile"
           push: false
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
   build-recommended-image:
     runs-on: ubuntu-latest
     steps:
@@ -103,5 +97,3 @@ jobs:
           context: "3-recommended"
           file: "3-recommended/deployments/Dockerfile"
           push: false
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
