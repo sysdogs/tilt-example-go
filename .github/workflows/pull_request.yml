@@ -46,7 +46,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           tags: kamsz/tilt-example-go:base-${{ github.sha }}
-          context: "{{defaultContext}}:0-base"
+          context: "0-base"
           file: "0-base/deployments/Dockerfile"
           push: false
           cache-from: type=gha
@@ -64,7 +64,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           tags: kamsz/tilt-example-go:measured-${{ github.sha }}
-          context: "{{defaultContext}}:1-measured"
+          context: "1-measured"
           file: "1-measured/deployments/Dockerfile"
           push: false
           cache-from: type=gha
@@ -82,7 +82,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           tags: kamsz/tilt-example-go:optimized-${{ github.sha }}
-          context: "{{defaultContext}}:2-optimized"
+          context: "2-optimized"
           file: "2-optimized/deployments/Dockerfile"
           push: false
           cache-from: type=gha
@@ -100,7 +100,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           tags: kamsz/tilt-example-go:recommended-${{ github.sha }}
-          context: "{{defaultContext}}:3-recommended"
+          context: "3-recommended"
           file: "3-recommended/deployments/Dockerfile"
           push: false
           cache-from: type=gha
