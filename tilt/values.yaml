@@ -9,7 +9,7 @@ image:
   repository: kamsz/tilt-example-go
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: 2dc8a20ae9aed65195a9c78391fe5bea90033b74
+  tag: 33cddf09dc1b6d1d2dca5c3ae3a04adc3203e467
 
 imagePullSecrets: []
 nameOverride: ""
