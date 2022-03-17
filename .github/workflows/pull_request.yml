@@ -47,7 +47,7 @@ jobs:
         with:
           tags: kamsz/tilt-example-go:base-${{ github.sha }}
           context: "{{defaultContext}}:0-base"
-          file: "{{defaultContext}}:0-base/deployment/Dockerfile"
+          file: "{{defaultContext}}/0-base/deployment/Dockerfile"
           push: false
           cache-from: type=gha
           cache-to: type=gha,mode=max
@@ -65,7 +65,7 @@ jobs:
         with:
           tags: kamsz/tilt-example-go:measured-${{ github.sha }}
           context: "{{defaultContext}}:1-measured"
-          file: "{{defaultContext}}:1-measured/deployment/Dockerfile"
+          file: "{{defaultContext}}/1-measured/deployment/Dockerfile"
           push: false
           cache-from: type=gha
           cache-to: type=gha,mode=max
@@ -83,7 +83,7 @@ jobs:
         with:
           tags: kamsz/tilt-example-go:optimized-${{ github.sha }}
           context: "{{defaultContext}}:2-optimized"
-          file: "{{defaultContext}}:2-optimized/deployment/Dockerfile"
+          file: "{{defaultContext}}/2-optimized/deployment/Dockerfile"
           push: false
           cache-from: type=gha
           cache-to: type=gha,mode=max
@@ -101,7 +101,7 @@ jobs:
         with:
           tags: kamsz/tilt-example-go:recommended-${{ github.sha }}
           context: "{{defaultContext}}:3-recommended"
-          file: "{{defaultContext}}:3-recommended/deployment/Dockerfile"
+          file: "{{defaultContext}}/3-recommended/deployment/Dockerfile"
           push: false
           cache-from: type=gha
           cache-to: type=gha,mode=max
